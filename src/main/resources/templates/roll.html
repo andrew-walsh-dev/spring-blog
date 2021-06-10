@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8" />
-    <title>Home</title>
-</head>
+<head th:replace="partials :: head(title='Guess')"/>
 <body>
-
+<nav th:replace="partials :: navbar"/>
 <h1>Guess a number between 1 and 6.</h1>
 
-    <input id="guess" type="number" min="1" max="6" step="1">
-    <button id="submit" type="submit">Submit</button>
+<input id="guess" type="number" min="1" max="6" step="1">
+<button id="submit" type="submit">Submit</button>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<footer th:replace="partials :: footer"/>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script>
-    $(document).ready(function(){
-        $("#submit").click(function(){
+    $(document).ready(function () {
+        $("#submit").click(function () {
             let guess = $("#guess").val();
             window.location = "/roll-dice/" + guess;
         })
