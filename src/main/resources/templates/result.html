@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-  <meta charset="UTF-8" />
-  <title>Home</title>
-</head>
+<head th:replace="partials :: head(title='Result')"/>
 <body>
-
+<nav th:replace="partials :: navbar"/>
 <h2 th:text="'Your guess was ' + ${result} + '!'">.</h2>
 <h3 th:text="'Your guess was ' + ${guess} + '.'">.</h3>
 <h3 th:text="'The roll was ' +  ${roll} + '.'">.</h3>
-
+<footer th:replace="partials :: footer"/>
 </body>
 </html>
