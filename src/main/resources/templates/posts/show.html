@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="partials :: head(title='One post')"/>
+<body>
+<nav th:replace="partials :: navbar"/>
+
+
+    <h3 th:text="${post.title}" />
+    <p th:text="${post.body}" />
+
+<footer th:replace="partials :: footer"/>
+</body>
+</html>
