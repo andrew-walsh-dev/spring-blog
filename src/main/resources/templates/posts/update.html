@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="partials :: head(title='Update a post')"/>
+<body>
+<nav th:replace="partials :: navbar"/>
+
+<h2>Update a post!</h2>
+
+<form th:action="${post.id}" method="POST">
+  <label for="title">Post Title</label>
+  <input type="text" id="title" name="title" th:value="${post.title}">
+  <label for="body">Post Body</label>
+  <textarea id="body" name="body" th:text="${post.body}"></textarea>
+  <button type="submit">Update Post</button>
+</form>
+
+<footer th:replace="partials :: footer"/>
+</body>
+</html>

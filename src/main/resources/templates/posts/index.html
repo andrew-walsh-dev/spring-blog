@@ -4,10 +4,24 @@
 <body>
 <nav th:replace="partials :: navbar"/>
 
-<div th:each="post : ${posts}">
-    <h3 th:text="${post.title}" />
-    <p th:text="${post.body}" />
-</div>
+<form action="/posts/create">
+    <button type="submit">Create a post</button>
+</form>
+
+<th:block th:each="post : ${posts}">
+    <div th:id="${post.id}">
+        <h3 th:text="${post.title}" />
+        <p th:text="${post.body}" />
+        <!-- EDIT BUTTON -->
+        <form th:action="'/posts/update/' + ${post.id}" method="get">
+            <button type="submit">Edit</button>
+        </form>
+        <form th:action="'/posts/delete/' + ${post.id}" method="post">
+            <button type="submit">Delete</button>
+        </form>
+    </div>
+</th:block>
+
 
 <footer th:replace="partials :: footer"/>
 </body>
