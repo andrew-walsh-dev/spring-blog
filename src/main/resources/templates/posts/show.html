@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://thymeleaf.org">
 <head th:replace="partials :: head(title='One post')"/>
 <body>
 <nav th:replace="partials :: navbar"/>
 
 
-    <h3 th:text="${post.title}" />
-    <p th:text="${post.body}" />
+    <h3 th:text="${post.title}"></h3>
+    <p th:text="${post.body}"></p>
+    <br>
+    <p th:text="'Owner email: ' + ${post.owner.email}"></p>
 
 <footer th:replace="partials :: footer"/>
 </body>
