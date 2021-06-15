@@ -13,7 +13,7 @@
         <h3 th:text="${post.title}" />
         <p th:text="${post.body}" />
         <!-- EDIT BUTTON -->
-        <form th:action="'/posts/update/' + ${post.id}" method="get">
+        <form th:action="'/posts/' + ${post.id} + '/edit'" method="get">
             <button type="submit">Edit</button>
         </form>
         <form th:action="'/posts/delete/' + ${post.id}" method="post">
